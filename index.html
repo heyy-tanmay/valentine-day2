@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine? 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mx-auto py-8 px-4 flex items-center justify-center min-h-screen">
+        <div class="card-container">
+            <!-- VIEW 1: The Proposal -->
+            <div class="view active" id="view1">
+                <div class="text-center">
+                    <img src="https://placehold.co/200x200/FFE8F0/8B1538?text=🐻" alt="Bear" class="sticker mx-auto">
+                    <h1 class="heading">Will you be mine 🥺?</h1>
+                    <div class="button-group">
+                        <button class="btn-red" onclick="goToView2()">YES</button>
+                        <button class="btn-blue" onclick="handleNo()">NO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW 2: The Celebration -->
+            <div class="view" id="view2">
+                <div class="text-center">
+                    <img src="https://placehold.co/200x200/FFE8F0/8B1538?text=💑" alt="Bear Couple" class="sticker mx-auto">
+                    <h1 class="heading">Happy Valentine Day Baby! 💍</h1>
+                    <p class="subtext">Every second with you is a celebration. You are the spark that makes my world so much brighter!</p>
+                    <button class="btn-red" onclick="goToView3()" style="margin-top: 30px;">SEE MY GIFTS →</button>
+                </div>
+            </div>
+
+            <!-- VIEW 3: The Gifts -->
+            <div class="view" id="view3">
+                <h1 class="heading text-center">Something for You</h1>
+                <div class="flex flex-col md:flex-row gap-6 justify-center my-8">
+                    <div class="gift-card" onclick="openLetterModal()">
+                        <div class="gift-card-icon">💌</div>
+                        <div class="gift-card-label">Love Letter</div>
+                    </div>
+                    <div class="gift-card" onclick="toggleGallery()">
+                        <div class="gift-card-icon">📸</div>
+                        <div class="gift-card-label">Photo Gallery</div>
+                    </div>
+                </div>
+
+                <!-- Gallery Section (Hidden by default) -->
+                <div id="gallery-section" class="hidden">
+                    <h2 style="font-family: 'Playfair Display', serif; color: #8B1538; text-align: center; margin: 20px 0; font-size: 1.5rem;">Our Memories</h2>
+                    <div class="gallery-container">
+                        <div class="polaroid">
+                            <img src="https://placehold.co/150x150/FFE8F0/8B1538?text=Sweet+Hello" alt="Sweet Hello">
+                            <div class="polaroid-caption">Sweet Hello</div>
+                        </div>
+                        <div class="polaroid">
+                            <img src="https://placehold.co/150x150/FFE8F0/8B1538?text=True+Smile" alt="True Smile">
+                            <div class="polaroid-caption">True Smile</div>
+                        </div>
+                        <div class="polaroid">
+                            <img src="https://placehold.co/150x150/FFE8F0/8B1538?text=Perfect+Day" alt="Perfect Day">
+                            <div class="polaroid-caption">Perfect Day</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-red" onclick="goToView4()" style="display: block; margin: 30px auto 0;">FINALLY... →</button>
+            </div>
+
+            <!-- VIEW 4: The Finale -->
+            <div class="view" id="view4">
+                <div class="text-center">
+                    <h1 class="heading">You are my forever 🧿❤️!</h1>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <p class="finale-text">
+                        I love you more than words can say.<br>
+                        No matter where life takes us, my heart will always choose you.<br>
+                        Thank you for being my peace, my smile, my love.<br>
+                        This Valentine's Day and every day after, I'm grateful to call you mine.<br>
+                        You are my forever, and I mean that with all my heart.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Letter Modal -->
+    <div id="letterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLetterModal()">&times;</span>
+            <h2 class="modal-heading">💌 My Love Letter</h2>
+            <p class="modal-text">
+                My Dearest,<br><br>
+                From the moment I met you, my life changed in ways I never imagined. You brought colors to a world I thought was already perfect. Every smile you give me, every laugh we share, every moment with you feels like a dream I never want to wake up from.<br><br>
+                You are my inspiration, my strength, and my greatest blessing. When the world gets tough, I know I have you by my side, and that makes everything bearable. Your kindness, your warmth, and your love have touched the deepest parts of my heart.<br><br>
+                I promise to love you through every season of life. I promise to be your shoulder to lean on, your biggest cheerleader, and your eternal companion. You deserve all the love, respect, and happiness in this world, and I'm honored that you chose me.<br><br>
+                Thank you for being my forever. Thank you for choosing us. I love you more than words could ever express.<br><br>
+                Forever Yours,<br>
+                Your Valentine 💕
+            </p>
+        </div>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <span style="color: #8B1538; font-weight: 600; font-size: 0.9rem;">🎵 Music</span>
+        <button class="music-btn" onclick="toggleMusic()">▶</button>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
